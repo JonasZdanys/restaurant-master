@@ -3,16 +3,16 @@ using System.Threading;
 
 namespace Restaurant
 {
-    public class Pizza
+    public class Pizza : IDish
     {
-        private readonly string[] _toppings;
+        private readonly string[] _ingredients;
 
         public string Name { get; }
 
         public Pizza(string name, string[] toppings)
         {
             Name = name;
-            _toppings = toppings;
+            _ingredients = toppings;
         }
 
         public void Prepare()
@@ -32,7 +32,7 @@ namespace Restaurant
 
         private void AddToppings()
         {
-            foreach (var topping in _toppings)
+            foreach (var topping in _ingredients)
             {
                 Console.WriteLine($"Adding {topping}..");
                 Thread.Sleep(500);

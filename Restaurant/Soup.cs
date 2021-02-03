@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Restaurant
 {
-    public class Soup
+    public class Soup : IDish
     {
         private readonly string[] _ingredients;
         private readonly string[] _spices;
@@ -17,7 +17,7 @@ namespace Restaurant
             _ingredients = ingredients;
             _spices = seasoning;
         }
-        public void HeatThePot()
+        public void Prepare()
         {
             Console.WriteLine($"Making {Name} soup.");
             BoilingWater();
